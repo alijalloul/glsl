@@ -29,12 +29,12 @@ const IcoSphere = () => {
 
     containerRef.current.appendChild(renderer.domElement);
 
-    const directionalLight = new THREE.DirectionalLight("#FFFFFF", 0.6);
-    directionalLight.position.set(5, 5, 5);
+    const hemisphereLight = new THREE.HemisphereLight("#FFFFFF", 0.4);
+    hemisphereLight.position.set(0, 5, 0);
 
     const ambientLight = new THREE.AmbientLight("#FFFFFF", 0.2);
 
-    scene.add(directionalLight, ambientLight);
+    scene.add(hemisphereLight, ambientLight);
 
     const geometry = new THREE.IcosahedronGeometry(1, 200);
     const material = new THREE.MeshStandardMaterial({
